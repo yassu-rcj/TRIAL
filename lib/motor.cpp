@@ -1,20 +1,23 @@
 #include <Arduino.h>
-int IN1 = 5;
-int IN2 = 6;
-int VR_PIN = A0;
-int VR_VALUE;
-
-int PWM_VALUE;
-int STATUS = 0;
+#define IN1mo1 1//モータ４５度のIN1
+#define IN2mo1 2//モータ４５度のIN2
+#define IN1mo2 1//以下同様、この数字をピン番号に変えて
+#define IN2mo2 1
+#define IN1mo3 1
+#define IN2mo3 1
+#define IN1mo4 1
+#define IN2mo4 1
 void setup(){
 
 }
 
 void loop(){
- analogWrite(5,0);//正転
- analogWrite(6,255);
- delay(500);
- analogWrite(5,255);//反転
- analogWrite(6,0);
- delay(500);
+  analogWrite(IN1mo1,100);
+  analogWrite(IN2mo1,0);
+  analogWrite(IN1mo2,100);
+  analogWrite(IN2mo2,0);
+  analogWrite(IN1mo3,100);
+  analogWrite(IN2mo3,0);
+  analogWrite(IN1mo4,100);
+  analogWrite(IN2mo4,0);
 }
