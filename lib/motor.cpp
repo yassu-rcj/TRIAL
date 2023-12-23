@@ -1,12 +1,12 @@
 #include <Arduino.h>
-#define IN1mo1 1//モータ４５度のIN1
-#define IN2mo1 2//モータ４５度のIN2
-#define IN1mo2 1//以下同様、この数字をピン番号に変えて
-#define IN2mo2 1
-#define IN1mo3 1
-#define IN2mo3 1
-#define IN1mo4 1
-#define IN2mo4 1
+#define IN1mo1 19//モータ４５度のIN1
+#define IN2mo1 20//モータ４５度のIN2
+#define IN1mo2 7//以下同様、この数字をピン番号に変えて
+#define IN2mo2 6
+#define IN1mo3 3
+#define IN2mo3 2
+#define IN1mo4 8
+#define IN2mo4 9
 void setup(){
 
 }
