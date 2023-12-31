@@ -17,5 +17,6 @@ for (int i =0; i<1000; i++){
 }
 Serial.println(">ball:");
 Serial.println(c);
+Serial.println();
 c=0;
 }
