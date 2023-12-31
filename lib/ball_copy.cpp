@@ -8,7 +8,7 @@ void setup() {
 }
 void loop(){   
 for (int i =0; i<1000; i++){
-  b=PING & _BV(2);//
+  b=PING & _BV(2);//ここはhttps://ht-deko.com/arduino/portregisters.html　  PIN〇 & _BV(数字);
   if (b==0){
     c++;
   }else{
