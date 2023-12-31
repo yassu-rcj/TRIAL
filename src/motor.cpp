@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #define IN1mo1 6 //ピン一個目
-#define IN2mo1 11　//ピン二個目
+#define IN2mo1 11 //ピン二個目
 #define IN1mo2 3
 #define IN2mo2 6
 #define IN1mo3 1
