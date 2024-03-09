@@ -1,5 +1,5 @@
 #include <Arduino.h>
-int led=13;
+
 void setup()
 {
     pinMode(13,OUTPUT);

@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#define pin 16
+#define pin 8
 int b,c;
 unsigned long time_new;
 void setup() {
@@ -8,8 +8,8 @@ void setup() {
 }
 void loop(){   
  time_new=micros();
- b = PINH & _BV(1);
-if (time_new % 833 == 0){
+ b = digitalRead(8);
+ if (time_new % 833 == 0){
 if (time_new==0){
      c=1;
 }else{
@@ -21,9 +21,9 @@ if (time_new==0){
 }
  }else{
   if (b==0){
-    c=c+1;
-  }else{
     c=c;
+  }else{
+    c=c+1;
  }
  }
 }
