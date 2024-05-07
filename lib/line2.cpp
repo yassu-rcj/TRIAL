@@ -9,7 +9,7 @@ void setup()
 }
 void loop()
 {
-    b = digitalRead(4); // ここはhttps://ht-deko.com/arduino/portregisters.html　  PIN〇 & _BV(数字);
+    b = PINB & _BV(0); // ここはhttps://ht-deko.com/arduino/portregisters.html　  PIN〇 & _BV(数字);
     Serial.print("line");
     Serial.println(b);
 }

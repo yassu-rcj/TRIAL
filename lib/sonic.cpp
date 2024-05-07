@@ -1,32 +1,50 @@
 #include <Arduino.h>
 #define trigPin 8
 #define echoPin 9
-float distance;
+float distance, duration;
 float sonic1();
-void setup(){
-  
-  Serial.begin(9600);  // シリアルモニタの開始
-  
-  pinMode(echoPin,INPUT);   // エコーピンを入力に
-  pinMode(trigPin,OUTPUT);  // トリガーピンを出力に
- 
+float sonic2();
+void setup()
+{
+
+  Serial.begin(57600); // シリアルモニタの開始
+
+  pinMode(echoPin, INPUT);  // エコーピンを入力に
+  pinMode(trigPin, OUTPUT); // トリガーピンを出力に
 }
- 
- 
-void loop(){
-distance=sonic1();
-Serial.print(distance);
-Serial.println();
-delay(1);
+
+void loop()
+{
+  distance = sonic1();
+  duration = sonic2();
+  Serial.print(">duration:");
+  Serial.println(duration);
+  Serial.print(">distance:");
+  Serial.println(distance);
 }
-float sonic1(){
-  float duration,distance;
-  digitalWrite(1,LOW);
+float sonic1()
+{
+  float duration, distance;
+  digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
-  digitalWrite(1,HIGH);
+  digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
-  duration = pulseIn(1,HIGH);
-  duration = duration/2;
-  distance = duration*340*100/1000000;
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  duration = duration / 2;
+  distance = duration * 340 * 100 / 1000000;
   return distance;
+}
+float sonic2()
+{
+  float duration, distance;
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  duration = duration / 2;
+  distance = duration * 340 * 100 / 1000000;
+  return duration;
 }
