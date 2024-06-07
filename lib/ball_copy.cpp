@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#define pin 8 // 　これがピン番号
+#define pin 21 // 　これがピン番号
 int b, c;
 unsigned long time_new;
 void setup()
